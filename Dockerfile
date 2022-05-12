@@ -74,6 +74,7 @@ RUN apt-get update -qq \
        default-libmysqlclient-dev \
        # some other build tools
        swig \
+       libffi-dev \
        pkg-config
 
 # Install pipx, which we use to install other python tools.
