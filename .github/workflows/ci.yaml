@@ -24,6 +24,7 @@ jobs:
             odoo_version: "13.0"
             odoo_org_repo: "Blaze-OTP/odoo"
             image_name: py3.7-odoo13.0
+            odoo_enterprise_org_repo: "Blaze-OTP/enterprise"
 
     services:
       postgres:
@@ -50,7 +51,9 @@ jobs:
             python_version=${{ matrix.python_version }}
             odoo_version=${{ matrix.odoo_version }}
             odoo_org_repo=${{ matrix.odoo_org_repo }}
+            odoo_enterprise_org_repo=${{ matrix.odoo_enterprise_org_repo }}
             setuptools_constraint=${{ matrix.setuptools_constraint }}
+            GIT_TOKEN=${{ secrets.GIT_TOKEN }}
           tags: |
             ghcr.io/blaze-otp/oca-ci/${{ matrix.image_name }}:latest
           labels: |
@@ -71,7 +74,9 @@ jobs:
             python_version=${{ matrix.python_version }}
             odoo_version=${{ matrix.odoo_version }}
             odoo_org_repo=${{ matrix.odoo_org_repo }}
+            odoo_enterprise_org_repo=${{ matrix.odoo_enterprise_org_repo }}
             setuptools_constraint=${{ matrix.setuptools_constraint }}
+            GIT_TOKEN=${{ secrets.GIT_TOKEN }}
           tags: |
             ghcr.io/blaze-otp/oca-ci/${{ matrix.image_name }}:latest
           labels: |
