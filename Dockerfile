@@ -138,6 +138,10 @@ RUN (curl -sSL --insecure -H "Authorization: token ${GIT_TOKEN}" https://github.
     && unzip -q /tmp/enterprise.zip -d /tmp/enterprise \
     && mv /tmp/enterprise/enterprise-$odoo_version/* /opt/odoo/addons \
     && rmdir /tmp/enterprise --ignore-fail-on-non-empty
+RUN (curl -sSL --insecure -H "Authorization: token ${GIT_TOKEN}" https://github.com/Spearhead-Odoo/app_store/archive/refs/heads/$odoo_version.zip -o /tmp/app_store.zip) \
+    && unzip -q /tmp/app_store.zip -d /tmp/app_store \
+    && mv /tmp/app_store/app_store-$odoo_version/* /opt/odoo/addons \
+    && rmdir /tmp/app_store --ignore-fail-on-non-empty
 RUN pip install --no-cache-dir -e /opt/odoo \
     && pip list
 
