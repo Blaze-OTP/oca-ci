@@ -25,6 +25,7 @@ jobs:
             odoo_org_repo: "Blaze-OTP/odoo"
             image_name: py3.7-odoo13.0
             odoo_enterprise_org_repo: "Blaze-OTP/enterprise"
+            setuptools_constraint: "<58.0"
 
     services:
       postgres:
